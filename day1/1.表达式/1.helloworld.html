@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--HTML-->
+		<div class="demo">
+			<p style="color: red;">表达式{{}}</p>
+			<p style="color: red;">1.字符串</p>
+			<p>{{html}}</p>
+			<p>{{html}}</p>
+			<p>{{html}}</p>
+
+			<p style="color: red;">2.对象</p>
+			<p>{{obj.name}}</p>
+			<p>{{obj.skill}}</p>
+
+			<p style="color: red;">3.数组</p>
+			<p>{{arr}}</p>
+			<p>{{arr[0]}}</p>
+			<p>{{arr[1]}}</p>
+			<p>{{arr[2]}}</p>
+
+			<p style="color: red;">4.数字</p>
+			<p>{{num+1/4}}</p>
+			<p style="color: red;">5.布尔值</p>
+			<p>{{!bool?"真的":"假的"}}</p>
+			<!--if else-->
+			<p>{{!bool?"真的":(bool?1:2)}}</p>
+		</div>
+		<!--JS-->
+		<script src="../../js/vue.js"></script>
+		<script>
+			//基于节点
+			//ele   data
+			//$("#demo").html("helloworld")
+			//$ jQuery
+			var demo = new Vue({
+				//element:节点 document.querySelcector()
+				el: ".demo",
+				//数据模型
+				data: {
+					html: "helloworld",
+					obj: {
+						name: "老姚",
+						skill: "PS"
+					},
+					arr: ["css", "js", "html"],
+					num: 99,
+					bool: true
+				}
+			})
+		</script>
+	</body>
+
+</html>

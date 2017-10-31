@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--HTML-->
+		<div id="demo" style="border: 1px solid red;">
+			<p :name="color">{{color}}</p>
+			<p :id="color">id</p>
+			<p :style="{color:'red',fontSize:'30px'}">123</p>
+			<p>{{name}}</p>
+		</div>
+		<div id="demo2" style="border: 1px solid green;">
+			<p>{{name}}</p>
+		</div>
+		<!--JS-->
+		<script src="../../js/vue.js"></script>
+		<script>
+			//$("p").css("color","red")
+			var demo = new Vue({
+				el:"#demo",
+				data:{
+					name:"广州",
+					color:"p"
+				}
+			})
+			new Vue({
+				el:"#demo2",
+				data:{
+					name:"青岛"
+				}
+			})
+		</script>
+	</body>
+</html>

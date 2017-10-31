@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<div>{{search}}</div>
+			<div>{{searched}}</div>
+			
+			<div>{{num}}</div>
+			<div>{{numed}}</div>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			Vue.filter("higthlight",function(value){
+				console.log(value)
+			})
+			new Vue({
+				el:"#demo",
+				data:{
+					search:"abc",
+					num:1000,
+				},
+				computed:{
+					searched:function(){
+						return "cba"
+					},
+					numed:function(){
+						return '$'+this.num
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

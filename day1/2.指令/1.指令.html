@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--css-->
+	</head>
+	<body>
+		<!--html-->
+		<div id="demo">
+			<!--<p>{{name}}</p>-->
+			<p style="color: red;">1.v-text</p>
+			<p v-text="name"></p>
+			
+			<p style="color: red;">2.v-if</p>
+			<!--v-if接受一个布尔值，如果为真那就显示，如果为假那就隐藏-->
+			<p v-if="!bool">1.显示或者隐藏这一块</p>
+			<p v-else>2.显示或者隐藏这一块</p>
+			
+			<p style="color: red;">3.v-for</p>
+			<ul>
+				<li v-for="a in arr">{{a}}</li>
+			</ul>
+			<select>
+				<option v-for="a in arr">{{a}}</option>
+			</select>
+			<table>
+				<tr v-for="a in arr">
+					<th>{{a}}</th>
+				</tr>
+			</table>
+			<ul>
+				<li v-for="a in arr2">{{a.name}}   {{a.skill}}</li>
+			</ul>
+			
+			<select>
+				<option v-for="a in arr2" :value="a.skill">{{a.name}}</option>
+			</select>
+			
+			<table>
+				<tr v-for="a in arr2">
+					<th>{{a.skill}}</th>
+					<th>{{a.name}}</th>
+				</tr>
+			</table>
+			
+			
+			<p style="color: red;">4.v-show</p>
+			<p v-show="bool">1.显示或者隐藏</p>
+			<!--<p v-if="bool">显示或者隐藏</p>-->
+			<button v-on:click="bool=!bool">OK</button>
+			
+			<p style="color: red;">4.v-on:xxxx</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			//以v-前缀在属性值上面的都是vue提供给你的内部指令
+			//{{name}}->广州
+			new Vue({
+				el:"#demo",
+				data:{
+					name:"广州",
+					bool:true,
+					arr:["css","js","html"],
+					arr2:[{
+						name:"广州",
+						skill:"ps"
+					},{
+						name:"深圳",
+						skill:"php"
+					},{
+						name:"青岛",
+						skill:"js"
+					}]
+				}
+			})
+		</script>
+		<!--js-->
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<input v-model="search" />
+			<!--<div v-html="html|higthlight"></div>-->
+			<!--<div>{{html|higthlight}}</div>-->
+			<div v-html="computedhtml"></div>
+			<!--旧的值-->
+			<!--Download the Vue Devtools extension for a better development experience:-->
+			<!--新的值-->
+			<!--<span style="color: red;">Download</span> the Vue Devtools extension for a better development experience:-->
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			Vue.filter("higthlight",function(value){
+				console.log(value)
+			})
+			new Vue({
+				el:"#demo",
+				data:{
+					search:"",
+					name:"qd",
+					html:"llabcdefgabclll"
+				},
+				computed:{
+					computedhtml:function(){
+						this.search
+						this.html
+						var arr = this.html.split(this.search)
+						console.log(arr)
+						var str = arr.join("<span style='color:red'>"+this.search+"</span>")
+						console.log(str)
+						return str
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

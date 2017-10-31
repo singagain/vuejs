@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+
+	<body>
+		<!--MVVM框架   MVC  express-->
+		<!--M--data--V-->
+		<div id="demo">
+			<p style="color:red">1.input</p>
+			<input v-model="name" />
+			<input v-model="num" type="range" />
+			
+			<p :style="{fontSize:num+'px'}">文字大小</p>
+			
+			<!--V-->
+			<p>{{name}}</p>
+			
+			<p style="color:red">2.textarea</p>
+			<textarea v-model="content"></textarea>
+			<p>{{content}}</p>
+			
+			<p style="color:red">3.select</p>
+			<select v-model="sel">
+				<option value="red">红色</option>
+				<option value="green">绿色</option>
+				<option value="yellow">黄色</option>
+			</select>
+			<p :style="{color:sel}">{{sel}}</p>
+			
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			//$("input").val();
+			
+			new Vue({
+				el:"#demo",
+				//M
+				data:{
+					name:"青岛",
+					content:"",
+					sel:"green",
+					num:66
+				}
+			})
+		</script>
+	</body>
+
+</html>

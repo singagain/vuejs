@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<p>{{name}}</p>
+			<ul>
+				<li v-for="a in arr" v-if="a.bool">
+					<p v-if="a.name=='广州'">{{a.name}}</p>
+					<p v-for="aa in a.skill">{{aa}}</p>
+				</li>
+			</ul>
+			<!--table select ul-->
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#demo",
+				data:{
+					name:"青岛",
+					arr:[{
+						name:"广州",
+						skill:["ps","js","php"],
+						bool:true
+					},{
+						name:"青岛",
+						skill:["java","python"],
+						bool:false
+					},{
+						name:"深圳",
+						skill:["1","1"],
+						bool:true
+					}]
+				}
+			})
+		</script>
+	</body>
+</html>

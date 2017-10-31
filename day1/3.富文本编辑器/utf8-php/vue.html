@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="demo">
+			<div v-html="html"></div>
+		</div>
+		<script src="../../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el:"#demo",
+				data:{
+					html:sessionStorage.getItem("html")
+				}
+			})
+		</script>
+	</body>
+</html>

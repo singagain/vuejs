@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<style>
+			.red {
+				color: red
+			}
+			
+			.size {
+				font-size: 50px;
+			}
+		</style>
+		<!-- angular react vue -->
+		<div id="demo">
+			<!--<p :id="name"></p>-->
+			<p v-bind:id="name">{{name}}</p>
+			<p v-bind:style="{color:'red',fontSize:'50px'}">red</p>
+			<p :style="{color:'red',fontSize:'50px'}">red</p>
+			<p :style="{display:(bool?'block':'none')}">显示和隐藏</p>
+			<p :class="{'red':bool,'size':num<66}">类</p>
+			<p v-show="bool">显示和隐藏</p>
+			<button v-on:click="bool=!bool">OK</button>
+			<p :id="name+'asdasd'">第二种写法</p>
+			<img :src="src" />
+			
+			<p class="red">red</p>
+		</div>
+		<script src="../../js/vue.js"></script>
+		<script>
+			new Vue({
+				el: "#demo",
+				data: {
+					name: "青岛",
+					bool: true,
+					num: 99,
+					src: "../../img/1.jpg"
+				}
+			})
+		</script>
+	</body>
+
+</html>
